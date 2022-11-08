@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar bg="dark" expand="lg" variant="dark">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="#home">LOGO</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
