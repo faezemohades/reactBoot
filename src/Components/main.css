@@ -1,0 +1,28 @@
+ 
+.logo{
+    width: 50px;
+  }
+  p{
+    font-size: 20px;
+    line-height:30px;
+
+  }
+
+  @media (max-width:425px) { 
+    p{
+        font-size: 14px;
+      }
+      .logo{
+        width: 35px;
+      }
+  }
+ 
+  @media (max-width:375px) { 
+    p{
+        font-size: 12px;
+      }
+      .logo{
+        width: 35px;
+      }
+  }
+ 

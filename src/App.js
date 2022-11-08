@@ -1,18 +1,15 @@
-import {
-  Container,
-  Nav,
-  Navbar,
-} from "react-bootstrap";
-import "./App.css";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import Main from "./Components/Main";
-
+import logo from "./assets/images/master_logo.png";
+ 
 function App() {
   return (
     <>
-      <Navbar bg="dark" expand="lg" variant="dark">
+      <Navbar bg="dark" variant="dark">
         <Container fluid>
-          <Navbar.Brand href="#home">LOGO</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Brand href="/">
+            <img src={logo} alt="logo"/>
+          </Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#back">بازگشت</Nav.Link>
@@ -21,7 +18,10 @@ function App() {
         </Container>
       </Navbar>
 
-    <Main/>
+      <Main />
+
+ 
+
     </>
   );
 }

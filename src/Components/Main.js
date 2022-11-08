@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import axios from "axios";
-import play from "../assets/images/64.png";
+import play from "../assets/images/play 64.png";
+import "./main.css";
+
 function Main() {
   const [show, setShow] = useState([]);
 
@@ -20,51 +22,54 @@ function Main() {
             <h3> لیست برنامه ها</h3>
           </Col>
         </Row>
-        <section>
-          {show.map((item, index) => (
-            <Row key={index} className="d-flex justify-content-center">
-              <Col lg="10">
-                <Card className="text-center mt-3 bg-dark">
-                  <div className="d-flex justify-content-center text-center ">
-                    {item.isplaying ? (
-                      <Card.Title className="mt-3 w-50">در حال پخش </Card.Title>
-                    ) : (
-                      <Card.Title className="mt-3 ">{item.date}</Card.Title>
-                    )}
-                  </div>
-
-                  <Card.Body className="d-flex justify-content-between">
-                    <div className="d-flex  align-items-center">
-                      <img
-                        src={`https://mp4.ir/api/flags/${item.flag1}`}
-                        alt=""
-                        className="logo img-fluid"
-                      />
-                      <h6 className="text">{item.title1}</h6>
+        {show.map((item, index) => (
+          <Row key={index} className="d-flex justify-content-center">
+            <Col lg="10" style={{ height: "160px" }}>
+              <Card className="text-center mt-3  bg-dark">
+                <Card.Body className="d-flex justify-content-between">
+                  {/* right */}
+                  <div className="d-flex  align-items-center">
+                    <img
+                      src={`https://mp4.ir/api/flags/${item.flag1}`}
+                      alt="flag1"
+                      className="logo img-fluid"
+                    />
+                    <div style={{ width: "70px" }}>
+                      <h6>{item.title1}</h6>
                     </div>
-                    <div className="d-flex align-items-center ">
-                      {item.isplaying ? (
+                  </div>
+                  {/* center */}
+                  <div className="d-flex justify-content-center text-center">
+                    {item.isplaying ? (
+                      <div style={{ width: "20vw" }}>
+                        <p className="mt-3 ">در حال پخش</p>
                         <a href={item.link}>
                           <img src={play} alt="" className="logo" />
                         </a>
-                      ) : (
-                        <p className="text">{item.time}</p>
-                      )}
+                      </div>
+                    ) : (
+                      <div style={{ width: "20vw" }}>
+                        <p className="mt-3">{item.date}</p>
+                        <p className=" mt-3 ">{item.time}</p>
+                      </div>
+                    )}
+                  </div>
+                  {/* left */}
+                  <div className="d-flex align-items-center ">
+                    <div style={{ width: "70px" }}>
+                      <h6 >{item.title2}</h6>
                     </div>
-                    <div className="d-flex align-items-center ">
-                      <h6 className="text">{item.title2}</h6>
-                      <img
-                        src={`https://mp4.ir/api/flags/${item.flag2}`}
-                        alt=""
-                        className="logo"
-                      />
-                    </div>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          ))}
-        </section>
+                    <img
+                      src={`https://mp4.ir/api/flags/${item.flag2}`}
+                      alt="flag2"
+                      className="logo"
+                    />
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        ))}
       </Container>
     </>
   );
