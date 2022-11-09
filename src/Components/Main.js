@@ -7,12 +7,22 @@ import "./main.css";
 function Main() {
   const [show, setShow] = useState([]);
 
+  const loadUsers =   () => {
+      axios
+      .get("https://www.mp4.ir/api/api/getworldcup")
+      .then((response) => {
+        console.log(response);
+        setShow(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   useEffect(() => {
-    axios.get("https://mp4.ir/api/worldcup2022.json?v=1").then((response) => {
-      console.log(response);
-      setShow(response.data);
-    });
+    loadUsers();
   }, []);
+ 
 
   return (
     <>
@@ -30,22 +40,29 @@ function Main() {
                   {/* right */}
                   {item.isplaying ? (
                     <div className="d-flex  align-items-center">
-                       <a href={item.link} style={{ textDecoration: "none", color: "white" ,display:"flex"}}>
-                      <img
-                        src={`https://mp4.ir/api/flags/${item.flag1}`}
-                        alt="flag1"
-                        className="logo img-fluid"
-                      />
-                      <div
+                      <a
+                        href={item.link}
                         style={{
-                          width: "70px",
-                          textAlign: "right",
-                          marginRight: "10px",
+                          textDecoration: "none",
+                          color: "white",
+                          display: "flex",
                         }}
                       >
-                        <span>{item.title1}</span>
-                      </div>
-                    </a>
+                        <img
+                          src={`https://mp4.ir/api/flags/${item.flag1}`}
+                          alt="flag1"
+                          className="logo img-fluid"
+                        />
+                        <div
+                          style={{
+                            width: "70px",
+                            textAlign: "right",
+                            marginRight: "10px",
+                          }}
+                        >
+                          <span>{item.title1}</span>
+                        </div>
+                      </a>
                     </div>
                   ) : (
                     <div className="d-flex  align-items-center">
@@ -87,30 +104,36 @@ function Main() {
                   {/* left */}
                   {item.isplaying ? (
                     <div className="d-flex  align-items-center">
-                       <a href={item.link} style={{ textDecoration: "none", color: "white" ,display:"flex"}}>
-                       <div
+                      <a
+                        href={item.link}
                         style={{
-                          width: "70px",
-                          textAlign: "left",
-                          marginLeft: "10px",
+                          textDecoration: "none",
+                          color: "white",
+                          display: "flex",
                         }}
                       >
-                        <span>{item.title2}</span>
-                      </div>
-                      <img
-                        src={`https://mp4.ir/api/flags/${item.flag2}`}
-                        alt="flag1"
-                        className="logo img-fluid"
-                      />
-                     
-                    </a>
+                        <div
+                          style={{
+                            width: "70px",
+                            textAlign: "left",
+                            marginLeft: "10px",
+                          }}
+                        >
+                          <span>{item.title2}</span>
+                        </div>
+                        <img
+                          src={`https://mp4.ir/api/flags/${item.flag2}`}
+                          alt="flag1"
+                          className="logo img-fluid"
+                        />
+                      </a>
                     </div>
                   ) : (
                     <div className="d-flex  align-items-center">
-                        <div
+                      <div
                         style={{
                           width: "70px",
-                          textAlign: "left",
+                          textAlign: "l",
                           marginLeft: "10px",
                         }}
                       >
@@ -121,7 +144,6 @@ function Main() {
                         alt="flag1"
                         className="logo img-fluid"
                       />
-                    
                     </div>
                   )}
                 </Card.Body>
