@@ -28,25 +28,55 @@ function Main() {
               <Card className="text-center mt-3  bg-dark">
                 <Card.Body className="d-flex justify-content-between">
                   {/* right */}
-                  <div className="d-flex  align-items-center">
-                    <img
-                      src={`https://mp4.ir/api/flags/${item.flag1}`}
-                      alt="flag1"
-                      className="logo img-fluid"
-                    />
-                    <div style={{ width: "70px" }}>
-                      <h6>{item.title1}</h6>
+                  {item.isplaying ? (
+                    <div className="d-flex  align-items-center">
+                       <a href={item.link} style={{ textDecoration: "none", color: "white" ,display:"flex"}}>
+                      <img
+                        src={`https://mp4.ir/api/flags/${item.flag1}`}
+                        alt="flag1"
+                        className="logo img-fluid"
+                      />
+                      <div
+                        style={{
+                          width: "70px",
+                          textAlign: "right",
+                          marginRight: "10px",
+                        }}
+                      >
+                        <span>{item.title1}</span>
+                      </div>
+                    </a>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="d-flex  align-items-center">
+                      <img
+                        src={`https://mp4.ir/api/flags/${item.flag1}`}
+                        alt="flag1"
+                        className="logo img-fluid"
+                      />
+                      <div
+                        style={{
+                          width: "70px",
+                          textAlign: "right",
+                          marginRight: "10px",
+                        }}
+                      >
+                        <span>{item.title1}</span>
+                      </div>
+                    </div>
+                  )}
                   {/* center */}
                   <div className="d-flex justify-content-center text-center">
                     {item.isplaying ? (
-                      <div style={{ width: "20vw" }}>
-                        <p className="mt-3 ">در حال پخش</p>
-                        <a href={item.link}>
+                      <a
+                        href={item.link}
+                        style={{ textDecoration: "none", color: "white" }}
+                      >
+                        <div style={{ width: "20vw" }}>
+                          <p className="mt-3 ">در حال پخش</p>
                           <img src={play} alt="" className="logo" />
-                        </a>
-                      </div>
+                        </div>
+                      </a>
                     ) : (
                       <div style={{ width: "20vw" }}>
                         <p className="mt-3">{item.date}</p>
@@ -55,16 +85,45 @@ function Main() {
                     )}
                   </div>
                   {/* left */}
-                  <div className="d-flex align-items-center ">
-                    <div style={{ width: "70px" }}>
-                      <h6 >{item.title2}</h6>
+                  {item.isplaying ? (
+                    <div className="d-flex  align-items-center">
+                       <a href={item.link} style={{ textDecoration: "none", color: "white" ,display:"flex"}}>
+                       <div
+                        style={{
+                          width: "70px",
+                          textAlign: "left",
+                          marginLeft: "10px",
+                        }}
+                      >
+                        <span>{item.title2}</span>
+                      </div>
+                      <img
+                        src={`https://mp4.ir/api/flags/${item.flag2}`}
+                        alt="flag1"
+                        className="logo img-fluid"
+                      />
+                     
+                    </a>
                     </div>
-                    <img
-                      src={`https://mp4.ir/api/flags/${item.flag2}`}
-                      alt="flag2"
-                      className="logo"
-                    />
-                  </div>
+                  ) : (
+                    <div className="d-flex  align-items-center">
+                        <div
+                        style={{
+                          width: "70px",
+                          textAlign: "left",
+                          marginLeft: "10px",
+                        }}
+                      >
+                        <span>{item.title1}</span>
+                      </div>
+                      <img
+                        src={`https://mp4.ir/api/flags/${item.flag2}`}
+                        alt="flag1"
+                        className="logo img-fluid"
+                      />
+                    
+                    </div>
+                  )}
                 </Card.Body>
               </Card>
             </Col>
