@@ -9,7 +9,7 @@ function Main() {
 
   const loadUsers =   () => {
       axios
-      .get("https://www.mp4.ir/api/api/getworldcup")
+      .get("https://mp4.ir/api/getworldcup")
       .then((response) => {
         console.log(response);
         setShow(response.data);
@@ -137,7 +137,7 @@ function Main() {
                           marginLeft: "10px",
                         }}
                       >
-                        <span>{item.title1}</span>
+                        <span>{item.title2}</span>
                       </div>
                       <img
                         src={`https://mp4.ir/api/flags/${item.flag2}`}
