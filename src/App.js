@@ -8,7 +8,7 @@ function App() {
       <Navbar bg="dark" variant="dark" sticky="top">
         <Container fluid>
           <Navbar.Brand href="https://www.mp4.ir/">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo"/>
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="https://www.mp4.ir/">بازگشت</Nav.Link>
