@@ -1,46 +1,69 @@
+.play-logo{
+  width: 50px;
+}
 .logo{
-    width: 50px;
-  }
-  p{
-    font-size: 20px;
-    line-height:20px;
-
-  }
-  span{
-    font-size: 23px;
-  }
-
-  @media (max-width:768px) {
-    p{
-        font-size: 14px;
-      }
-      .logo{
-        width: 50px;
-      }
-      span{
-        font-size: 20px;
-      }
-  }
+  width: 50px;
+}
+p{
+  font-size: 20px;
+  line-height:30px;
  
-  @media (max-width:425px) {
+}
+span{
+  font-size: 23px;
+}
+@media (min-width:768px) { 
+  .Card-Body{
+    height: 120px;   
+     }
+   
+}
+
+@media (max-width:768px) { 
+  p{
+      font-size: 18px;
+    }
+    .logo, .play-logo{
+      width: 50px;
+    }
+    span{
+      font-size: 20px;
+    }
+    .Card-Body{
+     height: 110px;   
+      }
+    
+
+}
+
+@media (max-width:425px) { 
+  p{
+      font-size: 11px;
+     }
+    .logo, .play-logo{
+      width: 30px;
+    }
+    span{
+      font-size: 15px;
+    }
+    .Card-Body{
+      height: 90px; 
+    }
     p{
-        font-size: 12px;
-      }
-      .logo{
-        width: 35px;
-      }
-      span{
-        font-size: 17px;
-      }
-  }
-  @media (max-width:320px) {
-    p{
-        font-size: 9px;
-      }
-      .logo{
-        width: 28px;
-      }
-      span{
-        font-size: 14px;
-      }
-  }
+      margin:0px!important;
+      padding: 0px!important;
+     }
+
+}
+@media (max-width:320px) { 
+  p{
+      font-size: 9px;
+    }
+    .logo, .play-logo{
+      width: 28px;
+    }
+    span{
+      font-size: 14px;
+    }
+   
+}
