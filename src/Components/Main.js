@@ -3,7 +3,8 @@ import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import axios from "axios";
 import play from "../assets/images/play 64.png";
 import "./main.css";
- import Test from "./Test.jsx"
+import Loading from "../assets/images/sss.svg";
+
 function Main() {
   const [show, setShow] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -20,9 +21,8 @@ function Main() {
   return (
     <div>
       {loading ? (
-       <Spinner  className="spiner">
-     </Spinner>
-      ) : (
+       <img src={Loading} className="spiner"/>
+       ) : (
        
         <Container className="my-5 text-light">
         <Row className="d-flex justify-content-center mb-4">
