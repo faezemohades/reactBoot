@@ -6,13 +6,15 @@ import "./main.css";
 import Loading from "./Loading";
 
 function Main() {
+ 
+
   const [show, setShow] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://mp4.ir/api/newworldcup.json?v=1")
+      .get("https://mp4.ir/api/getworldcup?v=1")
       .then((response) => {
         console.log(response.data);
         setShow(response.data.matches);
@@ -22,21 +24,22 @@ function Main() {
 
   return (
     <div>
+      
       {loading ? (
         <Loading />
       ) : (
-        <Container className="my-5 text-light">
-          <Row className="d-flex justify-content-center mt-4">
-            <Col lg="12" md="10" sm="10" xs="11">
-              <h3 >لیست برنامه ها</h3>
+        <Container className="mb-5 text-light">
+          <Row className="d-flex justify-content-center mt-4 ">
+            <Col lg="8" md="10" sm="10" >
+              <h3 >لیست برنامه‌ها</h3>
             </Col>
           </Row>
 
           {show &&
             show.map((item, index) => (
               <Row key={index} className="d-flex justify-content-center">
-                <Col lg="12" md="10" sm="10" xs="11">
-                  <h6 style={{ color: "grey" }} className="mt-5 ">{item.date}</h6>
+                <Col lg="8" md="10" sm="10"  >
+                  <h5 style={{ color: "#a4a4a4" }} className="mt-5 ">{item.date}</h5>
                   {item.data.map((sub, id) => (
                     <Row key={id} className="d-flex justify-content-center">
                     <Col >
@@ -67,15 +70,15 @@ function Main() {
                               </div>
                               {/* center */}
                               <div
-                                className="d-flex  flex-column text-center align-items-center justify-content-center"
+                                className="d-flex  flex-column text-center align-items-center justify-content-around"
                                 style={{ width: "30%" }}
                               >
-                                <p className="py-2">در حال پخش</p>
+                                <p className=" ">در حال پخش</p>
                                 <img
                                   src={play}
                                   alt=""
                                   className="play-logo"
-                                  style={{ transform: "translateY(-30%)" }}
+                                  style={{ transform: "translateY(-5%)" }}
                                 />
                               </div>
                               {/* left */}
@@ -115,7 +118,7 @@ function Main() {
                               className="d-flex flex-column justify-content-center text-center align-items-center"
                               style={{ width: "30%" }}
                             >
-                              <div className="d-flex flex-column justify-content-center mt-3 ">
+                              <div className="d-flex flex-column justify-content-center ">
                                  <p>{sub.time}</p>
                               </div>
                             </div>
@@ -144,6 +147,7 @@ function Main() {
             ))}
         </Container>
       )}
+ 
     </div>
   );
 }

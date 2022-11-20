@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Main from "./Components/Main";
 import logo from "./assets/images/master_logo.png";
-
+ 
 function App() {
   return (
     <>

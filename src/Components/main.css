@@ -2,7 +2,7 @@
 p{
   font-size: 20px;
   line-height:30px;
- 
+ color: #a4a4a4;
 }
 span{
   font-size: 23px;
@@ -10,7 +10,9 @@ span{
 
 .play-logo{
   width: 50px;
+
 }
+
 .logo{
   width: 50px;
 }
@@ -41,7 +43,12 @@ span{
   .Card-Body{
     height: 120px;   
      }
-   
+
+   p{
+      
+      margin-bottom: 10px!important;
+
+    }
 }
 
 @media (max-width:768px) { 
@@ -62,46 +69,56 @@ span{
 
 @media (max-width:425px) { 
   p{
-      font-size: 11px;
+      font-size: 15px;
      }
+     
     .logo, .play-logo{
       width: 30px;
     }
+   
     span{
-      font-size: 15px;
+      font-size: 16px;
     }
     .Card-Body{
-      height: 90px; 
+      height: 80px; 
     }
-    /* p{
-      margin:0px!important;
+     p{
       padding: 0px!important;
-     } */
+      margin-bottom: 5px!important;
+
+     }
+
+
 
 }
 
 @media (max-width:390px) { 
   p{
-      font-size: 9px;
+      font-size: 14px;
+      margin-bottom: 5px!important;
+
     }
     .logo, .play-logo{
       width: 28px;
     }
     span{
-      font-size: 12px;
+      font-size: 14px;
     }
    
 }
  
 @media (max-width:320px) { 
   p{
-      font-size: 8px;
+      font-size: 11px;
+      margin-bottom: 0px!important;
     }
     .logo, .play-logo{
       width: 28px;
     }
     span{
-      font-size: 11px;
+      font-size: 10px;
     }
-   
+    .Card-Body{
+      height: 75px; 
+    }
 }
